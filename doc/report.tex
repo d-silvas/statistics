@@ -63,9 +63,12 @@
 {\renewcommand{\arraystretch}{2}
 
 % https://www.overleaf.com/learn/latex/Environments
+\theoremstyle{definition}
 \newtheorem{example}{Example}[section]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -96,8 +99,8 @@
 	\begin{titlepage}
 		\centering
 		\vspace*{0.5 cm}
-		% \includegraphics[scale = 0.2]{uned.jpg}\\[1.0 cm] % University Logo
-		% \textsc{\LARGE Mathematics}\\[2.0 cm] % University Name
+		\includegraphics[scale = 0.2]{uned.jpg}\\[1.0 cm] % University Logo
+		\textsc{\LARGE Mathematics}\\[2.0 cm] % University Name
 		%\textsc{\Large Modelización}\\[0.5 cm] % Course Code
 		%\textsc{\large Herramientas Informáticas Para Matemáticas}\\[0.5 cm] % Course Name
 		\rule{\linewidth}{0.2 mm} \\[0.4 cm]
@@ -136,6 +139,9 @@
 	
 	\section{Binomial distribution}
 	\input{chapters/distributions/binomial}
+	
+	\section{Poisson distribution}
+	\input{chapters/distributions/poisson}
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
