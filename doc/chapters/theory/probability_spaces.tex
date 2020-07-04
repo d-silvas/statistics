@@ -1,7 +1,38 @@
-\subsection{Random variables and expectations}
+% TODO: sigma-algebras...
+
+\subsection{Definition and basic properties}
 
 \begin{definition}
 	\textbf{Random Experiment:} an experiment whose outcomes are determined only by chance factors.
+\end{definition}
+
+\begin{definition}
+	The description of a random experiment starts by identifying the set of all possible  outcomes of the experiment, which we call \textbf{sample space}, and we designate by $\O$.
+	\begin{itemize}
+		\item When $\O$ is finite or countable (\textit{numerable}), we say that the probability model is \textbf{discrete}.
+		\item When $\O$ is uncountable, we say that the probability model is \textbf{continuous}.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	Let $\O$ be a set and $\F$ a $\sigma$-algebra on $\O$. We say that $(\O, \F)$ is a \textbf{measurable space}. Any subset belonging to $\F$ is called an \textbf{event}.
+	\begin{itemize}
+		\item When $\O$ is finite or countable, we will usually consider $\F = \mathcal{P}(\O)$.
+		\item When $\O$ is uncountable, with $\O \subseteq \R^k$, we will usually consider $\F = \mathbb{B}_{\O}^k$.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	Given a measurable space $(\O, \F)$, a \textbf{probability}, or \textbf{probability measure}, is a function $\P: \F \rightarrow \R$ such that:
+	\begin{enumerate}[i)]
+		\item $\P(A) \geq 0$ for every $A \in \F$.
+		\item For every countable collection of events $\{A_n\} \subset \F$, which are pairwise disjoint, we have that:
+		\[
+			\P \left(\cup_n A_n\right) = \sum_n \P(A_n)
+		\]
+		\item $\P(\O) = 1$
+	\end{enumerate}
+	If $\P$ is a probability in $(\O, \F)$, we call the triad $(\O, \F, \P)$ a \textbf{probability space}. For every event $A \in \F$, we call $\P(A)$ the \textbf{probability of $A$}.
 \end{definition}
 
 \begin{definition}
@@ -15,6 +46,7 @@
 \begin{definition}
 	\textbf{Random Variable}: a variable whose numerical values are determined by chance factors. It is a function from the sample space to a set of real numbers.
 \end{definition}
+
 Given a sample space $\Omega = \{ \omega_1, \ldots, \omega_n \}$ with probability function $P$ and a random variable $X$ with range $\mathbb{X} = \{ x_1, \ldots x_m \}$, we can define a probability function $P_X$ on $\mathbb{X}$ in the following way: We will observe $X = x_i$ if and only if the outcome of the random experiment is an $\omega_i \in \Omega$ such that $X(\omega_j) = x_i$. Thus,
 \[
 	P_X(X = x_i) = P(\{ \omega_j \in \Omega \mid X(\omega_j) = x_i \})

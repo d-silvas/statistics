@@ -70,6 +70,12 @@
 \theoremstyle{theorem}
 \newtheorem{theorem}{Theorem}
 
+% Commonly used symbols
+\newcommand{\R}{\mathbb{R}} % Real numbers
+\renewcommand{\P}{\mathrm{P}} % Probability
+\newcommand{\F}{\mathcal{F}} % A sigma-algebra
+\renewcommand{\O}{\Omega} % The sample space
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -131,18 +137,21 @@
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	\section{Definitions}
-	\input{chapters/definitions}
+	\part{Theory}
+	\section{Probability spaces}
+	\input{chapters/theory/probability_spaces}
 	
+	\part{Discrete distributions}
 	\section{Discrete uniform distribution}
-	\input{chapters/distributions/discrete_uniform}
+	\input{chapters/discrete_distributions/discrete_uniform}
 	
 	\section{Binomial distribution}
-	\input{chapters/distributions/binomial}
+	\input{chapters/discrete_distributions/binomial}
 	
 	\section{Poisson distribution}
-	\input{chapters/distributions/poisson}
+	\input{chapters/discrete_distributions/poisson}
 	
+	\part{Continuous distributions}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
