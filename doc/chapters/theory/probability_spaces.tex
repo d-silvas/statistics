@@ -35,164 +35,98 @@
 	If $\P$ is a probability in $(\O, \F)$, we call the triad $(\O, \F, \P)$ a \textbf{probability space}. For every event $A \in \F$, we call $\P(A)$ the \textbf{probability of $A$}.
 \end{definition}
 
-\begin{definition}
-	\textbf{Sample Space:} the set of all possible outcomes of a random experiment.
-\end{definition}
+\begin{prop}
+	Let $(\O, \F, \P)$ be a probability space, and $A, B \in \F$. Then:
+	\[
+		\P(A - B) = \P(A) - \P(A \cap B)
+	\]
+	If $B \subseteq A$, then
+	\[
+		\P(A - B) = \P(A) - \P(B)
+	\]
+	and, thus, $\P(B) \leq \P(A)$. In particular, it is $\P(A) \leq 1$ for every $A \in \F$, and:
+	\[
+		\P(A^c) = 1 - \P(A)
+	\]
+	And from this last equality we deduce that $\P(\emptyset) = 0$.
+\end{prop}
+
+\begin{prop}
+	Let $(\O, \F, \P)$ be a probability space, and $A_1, \ldots, A_n \in \F$. Then,
+	\[
+		\P(A_1 \cup A_2) = \P(A_1) + \P(A_2) - \P(A_1 \cap A_2)
+	\]
+	and, more generally, the \textbf{inclusion-exclusion formula} holds:
+	\[
+		\begin{gathered}
+		\P(\cup_{i = 1}^n A_i) = \sum_{i = 1}^n\P(A_i) - \sum_{1 \leq i \leq j \leq n}\P(A_i \cap A_j) + \sum_{1 \leq i \leq j \leq k \leq n} \P(A_i \cap A_j \cap A_k) \\ + \cdots + (-1)^{n - 1} \P(A_1 \cap A_2 \cap \cdots A_n)
+		\end{gathered}
+	\]
+\end{prop}
+
+\subsection{Conditional probability}
+
+In a probability space $(\O, \F, \P)$, the fact of knowing that the outcome of the random experiment verifies a particular event $B$, affects the probability of all events.
+% TODO: find better explanation ...
 
 \begin{definition}
-	\textbf{Event:} the collection of none, one, or more than one outcomes from a sample space.
+	Let $B \in \F$ be an event such that $\P(B) > 0$. For each $A \in \F$, we define the \textbf{conditional probability of $A$ given $B$} as:
+	\[
+		\P(A \mid B) = \frac{\P(A \cap B)}{\P(B)}
+	\]
 \end{definition}
 
-\begin{definition}
-	\textbf{Random Variable}: a variable whose numerical values are determined by chance factors. It is a function from the sample space to a set of real numbers.
-\end{definition}
-
-Given a sample space $\Omega = \{ \omega_1, \ldots, \omega_n \}$ with probability function $P$ and a random variable $X$ with range $\mathbb{X} = \{ x_1, \ldots x_m \}$, we can define a probability function $P_X$ on $\mathbb{X}$ in the following way: We will observe $X = x_i$ if and only if the outcome of the random experiment is an $\omega_i \in \Omega$ such that $X(\omega_j) = x_i$. Thus,
+The knowledge that the event $B$ has been verified transforms the original probability space into a new one, $(\O, \F, \P(\cdot \mid B))$. Because we also know that the event $B^c$ has not happened, we can consider a more relevant space, $(B, \F_B, \P_B)$, in which:
 \[
-	P_X(X = x_i) = P(\{ \omega_j \in \Omega \mid X(\omega_j) = x_i \})
+	\F_B = \{ A \cap B \mid A \in \F \}
 \]
-The function $P_X$ is an \textit{induced} probability function on $\mathbb{X}$, defined in terms of the orginal function $P$. We will write $P(X = x_i)$ rather than $P_X(X = x_i)$.
-\begin{definition}
-	\textbf{Discrete Random Variable:} if the set of all possible values of a random variable $X$ is countable, then $X$ is called a \textit{discrete random variable}.
-\end{definition}
+is the new $\sigma$-algebra of events. We assign each of the new events, $C \in \F_B$, the probability:
+\[
+	\P_B(C) = \frac{\P(C)}{\P(B)} = \frac{\P(A \cap B)}{\P(B)}, \text{ if } C = A \cap B \text{ for some } A \in \F
+\]
 
-\begin{definition}
-	\textbf{Probability Mass Function (pmf):} let $R$ be the set of all possible values of a discrete random variable $X$, and $f(k) = P(X = k)$ for each $k$ in $R$. Then $f(k)$ is called the \textit{probability mass function} of $X$.
-\end{definition}
+\begin{prop}
+	Let $(\O, \F, \P)$ be a probability space. If $B \in \F$ is an event such that $\P(B) > 0$, then both $(\O, \F, \P(\cdot \mid B))$ and $(B, \F_B, \P_B)$ are probability spaces.
+\end{prop}
 
-\begin{definition}
-	\textbf{Continuous Random Variable:} if the set of all possible values of $X$ an interval or union of two or more nonoverlapping intervals in $\mathbb{R}$, then $X$ is called a \textit{continuous random variable}.
-\end{definition}
-
-\begin{definition}
-	\textbf{Probability Density Function (pdf):} any real valued function $f(x)$ that satisfies the following requirements is called a \textit{probability density function}:
+\begin{prop}[Product rule or Chain rule]
+	Let $\PS$ be a probability space, and $A_1, \ldots, A_n \in \F$ events such that $\P(\cap_{i = 1}^{n - 1} A_i) > 0$. Then,
 	\[
-		f(x) \geq 0 \text{ for all } x, \text{ and } \int_{-\infty}^{\infty}f(x)\,dx = 1
+		\P(\cap_{i = 1}^{n} A_i) = \P(A_1) \P(A_2 \mid A_1) \P(A_3 \mid A_2 \cap A_1) \cdots \P(A_n \mid \cap_{i = 1}^{n - 1} A_i)
 	\]
-\end{definition}
+\end{prop}
+\begin{proof}
+	By iteratively applying the definition of conditional probability, $\P(A \cap B) = \P(B) \P(A \mid B)$, we have that:
+	\begin{align*}
+		\P(\cap_{i = 1}^{n} A_i) &= \P(\cap_{i = 1}^{n - 1} A_i)\P(A_n \mid \cap_{i = 1}^{n - 1}) = \\
+		 &= \P(\cap_{i = 1} ^{n - 2} A_i) \P(A_{n - 1} \mid \cap_{i = 1} ^{n - 2} A_i) \P(A_n \mid \cap_{i = 1}^{n - 1}) = \\
+		 &= \cdots
+	\end{align*}
+\end{proof}
 
-\begin{definition}
-	\textbf{Cumulative Distribution function (cdf):} the \textit{cumulative distribution function} of a random variable $X$ is defined by
+\begin{prop}[Law or formula of total probability]
+	If ${B_n} \subset \F$ is a finite or countably infinite partition of the sample space (in other words, a set of pairwise disjoint events whose union is $\O$) and $\P(B_n) > 0$ for each $n$, then for any event $A \in \F$:
 	\[
-		F(x) = P(X \leq x)
+		\P(A) = \sum_n \P(B_n) \P(A \cap B_n)
 	\]
-	For a continuous random variable $X$ with the probability density function $f(x)$,
+\end{prop}
+\begin{proof}
+	\begin{align*}
+		\P(A) &= \P(A \cap \O) = \P(A \cap (\cup_n B_n)) = \P(\cup_n (A \cap B_n)) = \sum_n \P(A \cap B_n) = \\ &= \sum_n \P(B_n) \P(A \cap B_n)
+	\end{align*}
+\end{proof}
+
+\begin{prop}[Bayes' formula]
+	If $A$ and $B$ are events in the probability space $\PS$ such that $\P(B) > 0$, then:
 	\[
-	F(x) = P(X \leq x) = \int_{-\infty}^x f(t)\,dt, \ \forall x
+		\P(A \mid B) = \frac{\P(A) \, \P(B \mid A)}{\P(B)}
 	\]
-	For a discrete random variable $X$, the \textit{cdf} is defined by
+\end{prop}
+
+\begin{proof}
 	\[
-	F(k) = P(X \leq k) = \sum_{i = -\infty}^k P(X = i)
+		\P(A \mid B) = \frac{\P(A \cap B)}{\P(B)} = \frac{\P(A) \, \P(B \mid A)}{\P(B)}
 	\]
-\end{definition}
-The \textit{pdf} (or \textit{pmf}) contains the same information as the \textit{cdf}.
+\end{proof}
 
-If the distribution of a random variable $X$ depends on a parameter $\theta$, the the \textit{pdf} or \textit{pmf} of $X$ is usually expressed as $f(x \mid \theta)$, and the \textit{cdf} is written as $F(x \mid \theta)$
-\begin{theorem}
-	A function $F(x)$ is a cdf if and only if the following three conditions hold:
-	\begin{enumerate}[\bfseries a)]
-		\item $\lim_{x \rightarrow -\infty}F(x) = 0$ and $\lim_{x \rightarrow \infty}F(x) = 1$.
-		\item $F(x)$ is a nondecreasing function of x.
-		\item $F(x)$ is right-continuous; that is, for every number $x_0$, $\lim_{x \rightarrow x_0^{+}} F(x) = F(x_0)$
-	\end{enumerate}
-\end{theorem}
-
-\begin{definition}
-	\textbf{Expectation:} if $X$ is a continuous random variable with the \textit{pdf} $f(x)$, then the expectation of $g(X)$, where $g$ is a real valued function, is defined by
-	\[
-		E(g(X)) = \int_{-\infty}^{\infty}g(x)f(x)\,dx
-	\]
-	If $X$ is a discrete random variable, then
-	\[
-		E(g(X)) = \sum_k g(x) P(X = k)
-	\]
-	where the sum is over all possible values of $X$. Thus, $E(g(X))$ is the weighted average of the possible values of $g(X)$, each weighted by its probability.
-\end{definition}
-
-\begin{theorem}
-	Let $X$ be a random variable and let a, b and c be constants. Then for any functions $g_1(x)$ and $g_2(x)$ whose expectations exist,
-	\begin{enumerate}[\bfseries a)]
-		\item $E(ag_1(X) + bg_2(X) + c) = aEg_1(X) + bEg_2(X) + c$.
-		\item If $g_1(x) \geq 0 \ \forall x$, then $Eg_1(X) \geq 0$.
-		\item If $g_1(x) \geq g_2(x) \ \forall x$, then $Eg_1(X) \geq Eg_2(X)$.
-		\item If $a \leq g_1(x) \leq b \ \forall x$, then $a \leq Eg_1(X) \leq b$. 
-	\end{enumerate}
-\end{theorem}
-
-\subsection{Measures of Central Tendency}
-
-\begin{definition}
-	\textbf{Mean:} the \textit{mean} of a random variable $X$ is usually denoted by $\mu$. For a discrete random variable $X$, it is defined by
-	\[
-		\mu = E(X) = \sum_{k}P(X = k)
-	\]
-	where the sum is over all possible values of $X$. For a continuous random variable $X$ with probability density function $f(x)$, the \textit{mean} is defined by
-	\[
-		\mu = E(X) = \int_{-\infty}^{\infty} xf(x) \, dx
-	\]
-\end{definition}
-
-\begin{definition}
-	\textbf{Median:} the \textit{median} of a random variable $X$ is the value such that 50\% of the possible values of $X$ are less than or equal to that value. For a discrete distribution, median is not well defined, and it need not be unique.
-\end{definition}
-
-\begin{definition}
-	\textbf{Mode:} the most probable value of the random variable.
-\end{definition}
-
-\subsection{Moments}
-
-\begin{definition}
-	\textbf{Moments about the origin (Raw Moments)}: for each integer $n$, the $n$th \textit{moment} of $X$ (or $F(X)$), $\mu_n'$, is
-	\[
-		\mu_n' = EX^n
-	\]
-	For a continuous random variable this is:
-	\[
-		\mu_n' = EX^n = \int_{-\infty}^{\infty} x^n f(x) \, dx
-	\]
-	We can see that the mean is $\mu = \mu_1' = EX$.
-\end{definition}
-
-\begin{definition}
-	\textbf{Moments about the mean (Central Moments):} for each integer $n$, the $n$th \textit{central moment} of $X$ (or $F(X)$), $\mu_n$, is
-	\[
-		\mu_n = E(X - \mu)^n
-	\]
-\end{definition}
-
-\begin{definition}
-	\textbf{Variance:} the \textit{variance} of a random variable $X$ is its second central moment:
-	\[
-		\sigma^2 = VarX = E(X - EX)^2
-	\]
-	An alternative formula for the variance is given by
-	\[
-		VarX = EX^2 - (EX)^2
-	\]
-\end{definition}
-
-\begin{definition}
-	\textbf{Standard deviation:} the \textit{standard deviation} of a random variable $X$ is the square root of $Var X$:
-	\[
-		\sigma = \sqrt{VarX}
-	\]
-\end{definition}
-
-The variance gives a measure of the degree of spread of a distribution around its mean. Larger values mean $X$ is more variable. At the extreme, if $VarX = E(X - EX)^2 = 0$, then $X$ is equal to $EX$ with probability 1, and there is no variation in $X$.
-
-The standard deviation has the same qualitative interpretation: small values mean $X$ is very likely to be close to $EX$, and large values mean $X$ is very variable. The standard deviation is easier to interpret in that the measurement unit on the standard deviation is the same as that for the original variable $X$.
-
-\begin{theorem}
-	If $X$ is a random variable with finite variance, then for any constants $a$ and $b$:
-	\[
-		Var(aX + b) = a^2 VarX
-	\]
-\end{theorem}
-
-\begin{definition}
-	\textbf{}
-\end{definition}
-\begin{definition}
-	\textbf{}
-\end{definition}
+\subsection{Independence}

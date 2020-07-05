@@ -69,12 +69,15 @@
 \newtheorem{definition}{Definition}[section]
 \theoremstyle{theorem}
 \newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Proposition}
 
 % Commonly used symbols
 \newcommand{\R}{\mathbb{R}} % Real numbers
 \renewcommand{\P}{\mathrm{P}} % Probability
 \newcommand{\F}{\mathcal{F}} % A sigma-algebra
 \renewcommand{\O}{\Omega} % The sample space
+\newcommand{\PS}{(\O, \F, \P)} % The probability space
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -140,17 +143,25 @@
 	\part{Theory}
 	\section{Probability spaces}
 	\input{chapters/theory/probability_spaces}
+	\newpage
+	
+	\section{Random variables}
+	\input{chapters/theory/random_variables}
+	\newpage
 	
 	\part{Discrete distributions}
 	\section{Discrete uniform distribution}
 	\input{chapters/discrete_distributions/discrete_uniform}
+	\newpage
 	
 	\section{Binomial distribution}
 	\input{chapters/discrete_distributions/binomial}
-	
+	\newpage
+
 	\section{Poisson distribution}
 	\input{chapters/discrete_distributions/poisson}
-	
+	\newpage
+
 	\part{Continuous distributions}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
