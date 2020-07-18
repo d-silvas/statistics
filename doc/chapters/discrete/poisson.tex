@@ -12,6 +12,9 @@ The Poisson distribution is an appropriate model if the following assumptions ar
 	\item Two events cannot occur at exactly the same instant; instead, at each very small sub-interval exactly one event either occurs or does not occur.
 \end{itemize}
 
+The Poisson distribution can also be developed as a limiting distribution of the binomial, in which $n \rightarrow \infty$ and $p \rightarrow 0$ so that $np$ remains a constant. In other words, for large $n$ and small $p$, the binomial distribution can be approximated by the Poisson distribution with mean $\lambda = np$.
+
+If the sample was drawn without replacement from a small finite population, the hypergeometric distribution should be used instead of the binomial.
 
 \subsubsection{Probability mass function}
 Let $X$ denote the number of events in a unit interval of time or in a unit distance.Then, $X$ is called the Poisson random variable with mean number of events $\lambda$ in a unit interval of time. The probability mass function of a Poisson distribution with mean $\lambda$ is given by
@@ -26,34 +29,28 @@ The Poisson probability mass function is right-skewed, and the degree of skewnes
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{discrete/poisson/pmf_2.pdf}
 		\caption{$\lambda = 2$}
-		\label{fig:P2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
-	\includegraphics[width=\textwidth]{discrete/poisson/pmf_3.pdf}
-	\caption{$\lambda = 3$}
-	\label{fig:P3}
+		\includegraphics[width=\textwidth]{discrete/poisson/pmf_3.pdf}
+		\caption{$\lambda = 3$}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{discrete/poisson/pmf_5.pdf}
 		\caption{$\lambda = 5$}
-		\label{fig:P5}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{discrete/poisson/pmf_10.pdf}
 		\caption{$\lambda = 10$}
-		\label{fig:P10}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{discrete/poisson/pmf_20.pdf}
 		\caption{$\lambda = 20$}
-		\label{fig:P20}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{discrete/poisson/pmf_30.pdf}
 		\caption{$\lambda = 30$}
-		\label{fig:P30}
 	\end{subfigure}
-	\caption{Poisson distribution}\label{fig:poisson}
+	\caption{Poisson distribution}
 \end{figure}
 
 \begin{figure}[H]
@@ -66,9 +63,39 @@ The Poisson probability mass function is right-skewed, and the degree of skewnes
 	F(k \mid \lambda) = P(X = k \leq \lambda) = \sum_{i = 0}^{k} \frac{e^{-\lambda} \lambda^i}{i!}, \ k = 0, 1, 2, \ldots
 \]
 
-The Poisson distribution can also be developed as a limiting distribution of the binomial, in which $n \rightarrow \infty$ and $p \rightarrow 0$ so that $np$ remains a constant. In other words, for large $n$ and small $p$, the binomial distribution can be approximated by the Poisson distribution with mean $\lambda = np$.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/cdf_2.pdf}
+		\caption{$\lambda = 2$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/cdf_3.pdf}
+		\caption{$\lambda = 3$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/cdf_5.pdf}
+		\caption{$\lambda = 5$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/cdf_10.pdf}
+		\caption{$\lambda = 10$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/cdf_20.pdf}
+		\caption{$\lambda = 20$}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/cdf_30.pdf}
+		\caption{$\lambda = 30$}
+	\end{subfigure}
+	\caption{Poisson distribution}
+\end{figure}
 
-If the sample was drawn without replacement from a small finite population, the hypergeometric distribution should be used instead of the binomial.
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{discrete/poisson/cdf_all.pdf}
+	\caption{$F(k \mid \lambda) = P(X = k \leq \lambda) = \sum_{i = 0}^{k} \frac{e^{-\lambda} \lambda^i}{i!}, \ k = 0, 1, 2, \ldots$}
+\end{figure}
 
 \subsection{Moments}
 
