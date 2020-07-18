@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{book}
 \usepackage[english]{babel}
 \usepackage{natbib}
 \usepackage{url}
@@ -36,7 +36,7 @@
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true, %set true if you want colored links
-	linktoc=all,     %set to all if you want both sections and subsections linked
+	linktoc=false,   %set to all if you want both sections and subsections linked
 	linkcolor=blue,  %choose some color if you want links to stand out
 }
 
@@ -67,6 +67,9 @@
 
 % https://tex.stackexchange.com/questions/159257/increase-latex-table-row-height
 {\renewcommand{\arraystretch}{2}
+
+% https://tex.stackexchange.com/questions/49643/making-appendix-for-thesis/49647
+\usepackage[toc,page]{appendix}
 
 % https://www.overleaf.com/learn/latex/Environments
 % http://u.cs.biu.ac.il/~tsaban/Pdf/LaTeXCommonErrs.pdf
@@ -147,36 +150,34 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\tableofcontents
-	\pagebreak
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\part{Theory}
-	\section{Probability spaces}
+	\chapter{Probability spaces}
 	\input{chapters/theory/probability_spaces}
-	\newpage
 	
-	\section{Random variables}
+	\chapter{Random variables}
 	\input{chapters/theory/random_variables}
-	\newpage
 	
 	\part{Discrete distributions}
-	\section{Discrete uniform distribution}
+	\chapter{Discrete uniform distribution}
 	\input{chapters/discrete/discrete_uniform}
-	\newpage
 	
-	\section{Binomial distribution}
+	\chapter{Binomial distribution}
 	\input{chapters/discrete/binomial}
-	\newpage
 
-	\section{Poisson distribution}
+	\chapter{Poisson distribution}
 	\input{chapters/discrete/poisson}
-	\newpage
 
 	\part{Distributions in \texorpdfstring{$\R$}{R}}
-	\section{Exponential distribution}
+	\chapter{Exponential distribution}
 	\input{chapters/r/exponential}
-	\newpage
+
+	\part{Appendices}
+	\appendix
+	\chapter{The Gamma function}
+	\input{chapters/appendices/gamma}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	

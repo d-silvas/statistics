@@ -1,8 +1,10 @@
-\subsection{Description}
+\section{Description}
 The exponential distribution is the probability distribution of the time between events in a Poisson point process, i.e., a process in which events occur continuously and independently at a constant average rate. It is a particular case of the gamma distribution. It is the continuous analogue of the geometric distribution, and it has the key property of being memoryless. In addition to being used for the analysis of Poisson point processes it is found in various other contexts.
 
+% TODO
+TODO: proof of memorylessness (see MIT notes)
 
-\subsubsection{Probability mass function}
+\subsection{Probability mass function}
 \[
 	f(x; \lambda) =
 	\begin{cases}
@@ -16,7 +18,7 @@ The exponential distribution is the probability distribution of the time between
 	\caption{$f(x; \lambda) = \lambda e^{-\lambda x} \text{ if } x \geq 0$}
 \end{figure}
 
-\subsubsection{Cumulative distribution function}
+\subsection{Cumulative distribution function}
 \[
 	F(x; \lambda) =
 	\begin{cases}
@@ -30,10 +32,10 @@ The exponential distribution is the probability distribution of the time between
 	\caption{$F(x; \lambda) = 1 - e^{-\lambda x} \text{ if } x \geq 0$}
 \end{figure}
 
-\subsubsection{Memorylessness}
+\subsection{Memorylessness}
 See https://en.wikipedia.org/wiki/Exponential\_distribution
 
-\subsection{Moments}
+\section{Moments}
 
 \begin{tabularx}{\textwidth}{s X}
 	\hline

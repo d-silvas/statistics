@@ -1,4 +1,4 @@
-\subsection{Description}
+\section{Description}
 The Poisson distribution expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate and independently of the time since the last event. The Poisson distribution can also be used for the number of events in other specified intervals such as distance, area or volume.
 
 For instance, an individual keeping track of the amount of mail they receive each day may notice that they receive an average number of 4 letters per day. If receiving any particular piece of mail does not affect the arrival times of future pieces of mail, i.e., if pieces of mail from a wide range of sources arrive independently of one another, then a reasonable assumption is that the number of pieces of mail received in a day obeys a Poisson distribution. Other examples that may follow a Poisson distribution include the number of phone calls received by a call center per hour, the number of decay events per second from a radioactive source, the number of visits to a website and the number of typographical errors per page in a book.
@@ -16,7 +16,7 @@ The Poisson distribution can also be developed as a limiting distribution of the
 
 If the sample was drawn without replacement from a small finite population, the hypergeometric distribution should be used instead of the binomial.
 
-\subsubsection{Probability mass function}
+\subsection{Probability mass function}
 Let $X$ denote the number of events in a unit interval of time or in a unit distance.Then, $X$ is called the Poisson random variable with mean number of events $\lambda$ in a unit interval of time. The probability mass function of a Poisson distribution with mean $\lambda$ is given by
 \[
  	f(k \mid \lambda) = P(X = k \mid \lambda) = \frac{e^{-\lambda} \lambda^k}{k!}, \ k = 0, 1, 2, \ldots
@@ -58,7 +58,7 @@ The Poisson probability mass function is right-skewed, and the degree of skewnes
 	\caption{$f(k \mid \lambda) = P(X = k \mid \lambda) = \frac{e^{-\lambda} \lambda^k}{k!}, \ k = 0, 1, 2, \ldots$}
 \end{figure}
 
-\subsubsection{Cumulative distribution function}
+\subsection{Cumulative distribution function}
 \[
 	F(k \mid \lambda) = P(X = k \leq \lambda) = \sum_{i = 0}^{k} \frac{e^{-\lambda} \lambda^i}{i!}, \ k = 0, 1, 2, \ldots
 \]
@@ -97,7 +97,7 @@ The Poisson probability mass function is right-skewed, and the degree of skewnes
 	\caption{$F(k \mid \lambda) = P(X = k \leq \lambda) = \sum_{i = 0}^{k} \frac{e^{-\lambda} \lambda^i}{i!}, \ k = 0, 1, 2, \ldots$}
 \end{figure}
 
-\subsection{Moments}
+\section{Moments}
 
 \begin{tabularx}{\textwidth}{s X}
 	\hline

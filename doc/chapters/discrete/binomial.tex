@@ -1,11 +1,15 @@
-\subsection{Description}
+\section{Description}
+% TODO
+TODO: print pdfs as a function and not with bars
+
+
 A binomial experiment involves $n$ independent and identical trial such that each trial can result into one of the two possible outcomes: success of failure. If $p$ is the probability of observing success in each trial, then the number of successes $X$ that can be observed out of these $n$ trials is referred to as the \textbf{binomial random variable with $n$ trials and success probability $p$}, or $B(n, p)$.
 
 Binomial distribution is often used to estimate or determine the proportion of individuals with a particular attribute in a large population. Suppose that a random sample of $n$ units is drawn by sampling with replacement from a finite population or by sampling without replacement from a large population. The number of units that contain the attribute of interest in the sample follows a normal distribution.
 
 If the sample was drawn without replacement from a small finite population, the hypergeometric distribution should be used instead of the binomial.
 
-\subsubsection{Probability mass function}
+\subsection{Probability mass function}
 The probability of observing $k$ successes out of $n$ trials is given by the following probability mass function
 \[
 	P(X = k \mid n, p) = \binom{n}{k}p^{k}(1 - p)^{n - k}, \quad k = 0, 1, \ldots, n
@@ -50,7 +54,7 @@ Binomial's pmf is right-skewed when $p < 0.5$, left-skewed when $p > 0.5$ and sy
 	\caption{$P(X = k \mid n, p) = \binom{n}{k}p^{k}(1 - p)^{n - k}, \quad k = 0, 1, \ldots, n$}
 \end{figure}
 
-\subsubsection{Cumulative distribution function}
+\subsection{Cumulative distribution function}
 \[
 	P(X \leq k \mid n, p) = \sum_{i = 0}^{k} \binom{n}{i}p^{i}(1 - p)^{n - i}, \quad k = 0, 1, \ldots, n
 \]
@@ -89,7 +93,7 @@ Binomial's pmf is right-skewed when $p < 0.5$, left-skewed when $p > 0.5$ and sy
 	\caption{$P(X \leq k \mid n, p) = \sum_{i = 0}^{k} \binom{n}{i}p^{i}(1 - p)^{n - i}, \quad k = 0, 1, \ldots, n$}
 \end{figure}
 
-\subsection{Moments}
+\section{Moments}
 
 \begin{tabularx}{\textwidth}{s X}
 	\hline
@@ -97,7 +101,7 @@ Binomial's pmf is right-skewed when $p < 0.5$, left-skewed when $p > 0.5$ and sy
 	Variance & $np(1 - p)$\\\hline
 \end{tabularx}
 
-\subsection{Properties}
+\section{Properties}
 \begin{enumerate}
 	\item Let $X_1, \ldots, X_m$ be independent random variables with $X_i \sim B(n_i, p), \ i = 1, 2, \ldots, m$. Then,
 	\[
@@ -109,7 +113,7 @@ Binomial's pmf is right-skewed when $p < 0.5$, left-skewed when $p > 0.5$ and sy
 	\]
 \end{enumerate}
 
-\subsection{Examples}
+\section{Examples}
 \begin{example}
 	A fair die is rolled $n$ times.
 	\begin{itemize}
