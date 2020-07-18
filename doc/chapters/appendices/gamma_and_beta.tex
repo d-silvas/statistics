@@ -1,0 +1,67 @@
+\section{The Gamma function}
+
+\subsection{Definition}
+
+The \textit{gamma function} was introduced by Leonhard Euler in his goal to generalize the factorial to non-integer values.
+
+\begin{definition}[Euler, 1970]
+    Let $x > 0$. We define:
+    \[
+        \Gamma(x) = \int_0^1 (-\log t)^{x - 1} \, dt
+    \]   
+\end{definition}
+
+\begin{theorem}
+    For $x > 0$,
+    \[
+        \Gamma(x) = \int_0^\infty t^{x - 1} e^{-t} \, dt
+    \]
+\end{theorem}
+\begin{proof}
+    Use the change of variable $u = -\log t, \ t = e^{-u}, \ dt = -e^{-u} du$. Note that $t \rightarrow 0 \implies u \rightarrow \infty$, and $t \rightarrow 1 \implies u \rightarrow 0$.
+\end{proof}
+
+The derivatives can be deduced by differentiating under the integral sign of the second expression:
+\[
+    \Gamma'(x) = \int_0^\infty t^{x - 1} e^{-t} \log(t) \, dt
+\]
+\[
+    \Gamma^{(n)}(x) = \int_0^\infty t^{x - 1} e^{-t} \log^n(t) \, dt
+\]
+
+\begin{remark}
+    Remember that $t = e^{\log(t)}$, and then: $t^{x - 1} = (e^{\log(t)})^{x - 1} = e^{\log(t) (x - 1)}$. Thus, $\frac{d}{dx} t^{x - 1} = \log(t) e^{\log(t) (x - 1)} = \log(t) t^{x - 1} $
+\end{remark}
+
+\subsection{Properties}
+
+\subsubsection{The functional equation}
+
+We have that
+\[
+    \Gamma(1) = \int_0^\infty e^{-t} \, dt = 1
+\]
+and, for $x > 0$, an integration by parts ($u = t^{x - 1}, \frac{du}{dt} = t^{x - 2}, v = e^{-t}, \frac{dv}{dt} = -e^{-t}$) yields:
+\[
+    \Gamma(x + 1) = \int_0^\infty t^x e^{-t} \, dt = [-t^x e^{-t}]_0^\infty + x \int t{x - 1} e^{-t} \, dt = x\Gamma(x)
+\]
+and the relation $\Gamma(x + 1) = x \Gamma(x)$ is the important \textbf{functional equation}.
+
+For integers the functional equation becomes:
+\[
+    \Gamma(n + 1) = n!
+\]
+and it’s why the gamma function can be seen as an extension of the factorial function to real non null positive numbers.
+
+\subsubsection{Other important values}
+
+\[
+    \Gamma\left(\frac{1}{2}\right) = \int_0^\infty \frac{e^{-t}}{\sqrt{t}} \, dt = 2\int_0^\infty e^{-u^2} \, du = 2 \frac{\sqrt{\pi}}{2} = \sqrt{\pi}
+\]
+
+\subsubsection{Plot}
+
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=0.5\textwidth]{appendices/gamma.pdf}
+\end{figure}
