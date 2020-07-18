@@ -11,19 +11,19 @@ means = [2, 3, 5, 10, 20, 30]
 # Separate plots
 for mean in means:
     x = range(max_num)
-    y = poisson.pmf(x, mean)
+    y = poisson.cdf(x, mean)
 
     plt.bar(x, y)
 
-    plt.savefig(f'../doc/images/discrete/poisson/pmf_{mean}.pdf')
+    plt.savefig(f'../doc/images/discrete/poisson/cdf_{mean}.pdf')
     plt.close()
 
 # Joint plot
 for mean in means:
     x = range(max_num)
-    y = poisson.pmf(x, mean)
+    y = poisson.cdf(x, mean)
 
     plt.bar(x, y, label=f'$\\lambda = {mean}$')
 
 plt.legend()
-plt.savefig('../doc/images/discrete/poisson/pmf_all.pdf')
+plt.savefig('../doc/images/discrete/poisson/cdf_all.pdf')
