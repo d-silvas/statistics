@@ -16,8 +16,14 @@
 \usepackage{fancyhdr}
 \usepackage{vmargin}
 \setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
-%https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+% Add an extra level of sections with headings below \subsection
+% https://tex.stackexchange.com/questions/60209/
 \usepackage{titlesec}
+
+% https://tex.stackexchange.com/questions/84400/table-layout-with-tabularx-column-widths-502525
+% http://texdoc.net/texmf-dist/doc/latex/tools/tabularx.pdf
+\usepackage{tabularx}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
 
 % Allows usage of [H] in \begin{figure}
 \usepackage{float}
@@ -47,7 +53,7 @@
 \usepackage{amssymb}
 
 % https://tex.stackexchange.com/questions/439768/put-reference-above-equal-sign-and-refer-to-it
-\newcommand\numeq[1]%
+\newcommand\numeq[1]
 {\stackrel{\scriptscriptstyle(\mkern-1.5mu#1\mkern-1.5mu)}{=}}
 
 % https://tex.stackexchange.com/questions/7350/how-do-i-add-dots-in-toc
@@ -63,16 +69,22 @@
 {\renewcommand{\arraystretch}{2}
 
 % https://www.overleaf.com/learn/latex/Environments
-\theoremstyle{definition}
-\newtheorem{example}{Example}[section]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\theoremstyle{theorem}
+% http://u.cs.biu.ac.il/~tsaban/Pdf/LaTeXCommonErrs.pdf
+\theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
-\newtheorem{prop}{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}%[section]
+\newtheorem{example}[theorem]{Example}%[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
 
 % Commonly used symbols
 \newcommand{\R}{\mathbb{R}} % Real numbers
+\newcommand{\B}{\mathbb{B}} % Borel sigma-algebra
 \renewcommand{\P}{\mathrm{P}} % Probability
 \newcommand{\F}{\mathcal{F}} % A sigma-algebra
 \renewcommand{\O}{\Omega} % The sample space
@@ -110,8 +122,7 @@
 		\vspace*{0.5 cm}
 		\includegraphics[scale = 0.2]{uned.jpg}\\[1.0 cm] % University Logo
 		\textsc{\LARGE Mathematics}\\[2.0 cm] % University Name
-		%\textsc{\Large Modelización}\\[0.5 cm] % Course Code
-		%\textsc{\large Herramientas Informáticas Para Matemáticas}\\[0.5 cm] % Course Name
+		%\textsc{\Large Statistics}\\[0.5 cm] % Course Code
 		\rule{\linewidth}{0.2 mm} \\[0.4 cm]
 		{ \huge \bfseries \thetitle}\\
 		\rule{\linewidth}{0.2 mm} \\[1.5 cm]
@@ -151,20 +162,20 @@
 	
 	\part{Discrete distributions}
 	\section{Discrete uniform distribution}
-	\input{chapters/discrete_distributions/discrete_uniform}
+	\input{chapters/discrete/discrete_uniform}
 	\newpage
 	
 	\section{Binomial distribution}
-	\input{chapters/discrete_distributions/binomial}
+	\input{chapters/discrete/binomial}
 	\newpage
 
 	\section{Poisson distribution}
-	\input{chapters/discrete_distributions/poisson}
+	\input{chapters/discrete/poisson}
 	\newpage
 
-	\part{Distributions in $\R$}
+	\part{Distributions in \texorpdfstring{$\R$}{R}}
 	\section{Exponential distribution}
-	\input{chapters/distributions_in_r/exponential}
+	\input{chapters/r/exponential}
 	\newpage
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,29 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex",
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [";"],
+            "after": ["A", ";", "<Esc>"]
+        }
+    ],
+    "files.eol": "\n",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "python.pythonPath": "code\\venv\\Scripts\\python.exe"
+}

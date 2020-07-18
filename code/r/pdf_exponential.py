@@ -3,9 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
 
-# Font and LaTeX setup
-# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-rc('font',**{'family':'serif','serif':['Palatino']})
+# LaTeX setup
 rc('text', usetex=True)
 
 total_divisions = 100000
@@ -24,4 +22,7 @@ plt.xlabel(r'$x$')
 plt.ylabel(r'$f(x)$')
 plt.legend()
 
-plt.show()
+# plt.show()
+
+# Save file. This counts on the working directory to be the "code" folder !!!
+plt.savefig('../doc/images/r/exponential/pdf.pdf')

@@ -144,5 +144,18 @@ is the new $\sigma$-algebra of events. We assign each of the new events, $C \in 
 \end{definition}
 
 \begin{example}
-	Exercise 3.7 ...
+	Let $\B^k$ be the Borel $\sigma$-algebra in $\R^k$. For every $B \in \B^k$ we define:
+	\[
+		\P(B) = \frac{\lambda_k(B \cap A)}{\lambda_k(A)}
+	\]
+	where $A \in \B^k$ with finite volume $\lambda_k(A) > 0$. Then,
+	\begin{enumerate}[i)]
+		\item $\P$ is a probability in $(\R^k, \B^k)$, which is called the \textbf{uniform distribution} on $A$.
+		\item If $A = A_1 \times A_2$ with $A_1 \in \B^r$, $A_2 \in \B^s$ and $r + s = k$, then
+		\[
+			\{ B_1 \times A_2 \mid B_1 \in \B^r \} \text{ and } \{ A_1 \times B_2 \mid B_2 \in \B^s \} 
+		\]
+		are families of independent events.
+		\item If $ A = A_1 \times \cdots \times A_k$, with $A_i, \ldots, A_k \in \B$, then the families of events $\mathcal{C}_i = \{ A_1 \times \cdots \times B_i \times \cdots \times A_k \mid B_i \in \B \}$ are independent.
+	\end{enumerate}
 \end{example}

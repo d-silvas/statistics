@@ -7,6 +7,51 @@ The probability of observing $k$ successes out of $n$ trials is given by the fol
 	P(X = k \mid n, p) = \binom{n}{k}p^{k}(1 - p)^{n - k}, \quad k = 0, 1, \ldots, n
 \]
 
+Binomial's pmf is right-skewed when $p < 0.5$, left-skewed when $p > 0.5$ and symmetric when $p = 0.5$.
+
+% For the future: on image and floats positioning
+% https://tex.stackexchange.com/questions/278727/split-subfigures-over-multiple-pages/278748
+% https://tex.stackexchange.com/questions/16207/image-from-includegraphics-showing-up-in-wrong-location/16211
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/binomial/pmf_20_01.pdf}
+		\caption{$B(20, 0.1)$}
+		\label{fig:B(20,0.1)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+	\includegraphics[width=\textwidth]{discrete/binomial/pmf_20_05.pdf}
+	\caption{$B(20, 0.5)$}
+	\label{fig:B(20,0.5)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/binomial/pmf_20_025.pdf}
+		\caption{$B(20, 0.25)$}
+		\label{fig:B(20,0.25)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/binomial/pmf_20_075.pdf}
+		\caption{$B(20, 0.75)$}
+		\label{fig:B(20,0.75)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/binomial/pmf_100_01.pdf}
+		\caption{$B(100, 0.1)$}
+		\label{fig:B(100,0.1)}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/binomial/pmf_100_025.pdf}
+		\caption{$B(100, 0.25)$}
+		\label{fig:B(100,0.25)}
+	\end{subfigure}
+	\caption{Binomial distribution}\label{fig:binomial}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{discrete/binomial/pmf_all.pdf}
+	\caption{$P(X = k \mid n, p) = \binom{n}{k}p^{k}(1 - p)^{n - k}, \quad k = 0, 1, \ldots, n$}
+\end{figure}
+
 \subsubsection{Cumulative distribution function}
 \[
 	P(X \leq k \mid n, p) = \sum_{i = 0}^{k} \binom{n}{i}p^{i}(1 - p)^{n - i}, \quad k = 0, 1, \ldots, n
@@ -18,52 +63,11 @@ If the sample was drawn without replacement from a small finite population, the 
 
 \subsection{Moments}
 
-\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+\begin{tabularx}{\textwidth}{s X}
 	\hline
 	Mean & $np$ \\\hline
 	Variance & $np(1 - p)$\\\hline
-\end{tabular}
-
-\subsection{Plots}
-The distribution is right-skewed when $p < 0.5$, left-skewed when $p > 0.5$ and symmetric when $p = 0.5$.
-
-% For the future: on image and floats positioning
-% https://tex.stackexchange.com/questions/278727/split-subfigures-over-multiple-pages/278748
-% https://tex.stackexchange.com/questions/16207/image-from-includegraphics-showing-up-in-wrong-location/16211
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{binomial/b20,0.1}
-		\caption{$B(n, p), \ n = 20, p = 0.1$}
-		\label{fig:B(20,0.1)}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-	\includegraphics[width=\textwidth]{binomial/b20,0.5}
-	\caption{$B(n, p), \ n = 20, p = 0.5$}
-	\label{fig:B(20,0.5)}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{binomial/b20,0.25}
-		\caption{$B(n, p), \ n = 20, p = 0.25$}
-		\label{fig:B(20,0.25)}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{binomial/b20,0.75}
-		\caption{$B(n, p), \ n = 20, p = 0.75$}
-		\label{fig:B(20,0.75)}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{binomial/b100,0.1}
-		\caption{$B(n, p), \ n = 100, p = 0.1$}
-		\label{fig:B(100,0.1)}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{binomial/b100,0.25}
-		\caption{$B(n, p), \ n = 100, p = 0.25$}
-		\label{fig:B(100,0.25)}
-	\end{subfigure}
-	\caption{Binomial distribution}\label{fig:binomial}
-\end{figure}
+\end{tabularx}
 
 \subsection{Properties}
 \begin{enumerate}

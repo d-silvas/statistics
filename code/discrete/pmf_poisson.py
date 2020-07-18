@@ -1,13 +1,29 @@
 from scipy.stats import poisson
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('text', usetex=True)
 
 max_num = 60
-mean = 30
+means = [2, 3, 5, 10, 20, 30]
 
-x = range(max_num)
-y = poisson.pmf(x, mean)
+# Separate plots
+for mean in means:
+    x = range(max_num)
+    y = poisson.pmf(x, mean)
 
-plt.bar(x, y)
+    plt.bar(x, y)
 
-plt.show()
+    plt.savefig(f'../doc/images/discrete/poisson/pmf_{mean}.pdf')
+    plt.close()
+
+# Joint plot
+for mean in means:
+    x = range(max_num)
+    y = poisson.pmf(x, mean)
+
+    plt.bar(x, y, label=f'$\\lambda = {mean}$')
+
+plt.legend()
+plt.savefig('../doc/images/discrete/poisson/pmf_all.pdf')

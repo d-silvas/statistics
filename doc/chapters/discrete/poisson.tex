@@ -19,6 +19,48 @@ Let $X$ denote the number of events in a unit interval of time or in a unit dist
  	f(k \mid \lambda) = P(X = k \mid \lambda) = \frac{e^{-\lambda} \lambda^k}{k!}, \ k = 0, 1, 2, \ldots
 \]
 
+The Poisson probability mass function is right-skewed, and the degree of skewness decreases as $\lambda$ increases.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/pmf_2.pdf}
+		\caption{$\lambda = 2$}
+		\label{fig:P2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+	\includegraphics[width=\textwidth]{discrete/poisson/pmf_3.pdf}
+	\caption{$\lambda = 3$}
+	\label{fig:P3}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/pmf_5.pdf}
+		\caption{$\lambda = 5$}
+		\label{fig:P5}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/pmf_10.pdf}
+		\caption{$\lambda = 10$}
+		\label{fig:P10}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/pmf_20.pdf}
+		\caption{$\lambda = 20$}
+		\label{fig:P20}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{discrete/poisson/pmf_30.pdf}
+		\caption{$\lambda = 30$}
+		\label{fig:P30}
+	\end{subfigure}
+	\caption{Poisson distribution}\label{fig:poisson}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{discrete/poisson/pmf_all.pdf}
+	\caption{$f(k \mid \lambda) = P(X = k \mid \lambda) = \frac{e^{-\lambda} \lambda^k}{k!}, \ k = 0, 1, 2, \ldots$}
+\end{figure}
+
 \subsubsection{Cumulative distribution function}
 \[
 	F(k \mid \lambda) = P(X = k \leq \lambda) = \sum_{i = 0}^{k} \frac{e^{-\lambda} \lambda^i}{i!}, \ k = 0, 1, 2, \ldots
@@ -30,46 +72,8 @@ If the sample was drawn without replacement from a small finite population, the 
 
 \subsection{Moments}
 
-\begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
+\begin{tabularx}{\textwidth}{s X}
 	\hline
 	Mean & $\lambda$ \\\hline
 	Variance & $\lambda$\\\hline
-\end{tabular}
-
-\subsection{Plots}
-Poisson distribution is right-skewed, and the degree of skewness decreases as $\lambda$ increases.
-
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{poisson/P2.png}
-		\caption{$\lambda = 2$}
-		\label{fig:P2}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-	\includegraphics[width=\textwidth]{poisson/P3.png}
-	\caption{$\lambda = 3$}
-	\label{fig:P3}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{poisson/P5.png}
-		\caption{$\lambda = 5$}
-		\label{fig:P5}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{poisson/P10.png}
-		\caption{$\lambda = 10$}
-		\label{fig:P10}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{poisson/P20.png}
-		\caption{$\lambda = 20$}
-		\label{fig:P20}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{poisson/P30.png}
-		\caption{$\lambda = 30$}
-		\label{fig:P30}
-	\end{subfigure}
-	\caption{Poisson distribution}\label{fig:poisson}
-\end{figure}
+\end{tabularx}
