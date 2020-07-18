@@ -1,20 +1,41 @@
 {
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%.tex"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+    ],
     "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex ➞ biber ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                // "pdflatex"
+            ]
+        },
         {
             "name": "pdflatex",
             "tools": [
                 "pdflatex",
             ]
         },
-        {
-            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
+        
     ],
     "workbench.iconTheme": "material-icon-theme",
     "vim.normalModeKeyBindingsNonRecursive": [

@@ -1,10 +1,7 @@
 \documentclass[12pt]{book}
 \usepackage[english]{babel}
-\usepackage{natbib}
 \usepackage{url}
-\usepackage[utf8x]{inputenc}
-% https://tex.stackexchange.com/questions/9866/latest-advice-on-the-euro-symbol
-\usepackage{lmodern,textcomp}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{graphicx}
@@ -36,7 +33,7 @@
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true, %set true if you want colored links
-	linktoc=false,   %set to all if you want both sections and subsections linked
+	linktoc=section,   %set to all if you want both sections and subsections linked
 	linkcolor=blue,  %choose some color if you want links to stand out
 }
 
@@ -70,6 +67,10 @@
 
 % https://tex.stackexchange.com/questions/49643/making-appendix-for-thesis/49647
 \usepackage[toc,page]{appendix}
+
+% https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
 
 % https://www.overleaf.com/learn/latex/Environments
 % http://u.cs.biu.ac.il/~tsaban/Pdf/LaTeXCommonErrs.pdf
@@ -118,8 +119,6 @@
 	% Make all the references appear always
 	\nocite{*}
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
 	\begin{titlepage}
 		\centering
 		\vspace*{0.5 cm}
@@ -147,13 +146,10 @@
 		
 	\end{titlepage}
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
 	\tableofcontents
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
 	\part{Theory}
+
 	\chapter{Probability spaces}
 	\input{chapters/theory/probability_spaces}
 	
@@ -161,6 +157,7 @@
 	\input{chapters/theory/random_variables}
 	
 	\part{Discrete distributions}
+
 	\chapter{Discrete uniform distribution}
 	\input{chapters/discrete/discrete_uniform}
 	
@@ -171,14 +168,17 @@
 	\input{chapters/discrete/poisson}
 
 	\part{Distributions in \texorpdfstring{$\R$}{R}}
+
 	\chapter{Exponential distribution}
 	\input{chapters/r/exponential}
 
 	\part{Appendices}
+
 	\appendix
 	\chapter{The Gamma function}
 	\input{chapters/appendices/gamma}
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
+	\printbibliography
+	\addcontentsline{toc}{part}{Bibliography}
+
 \end{document}

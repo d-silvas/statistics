@@ -6,3 +6,5 @@
 *.log
 *.bbl
 *.blg
+*.bcf
+*.run.xml
