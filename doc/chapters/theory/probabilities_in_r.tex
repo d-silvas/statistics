@@ -1,0 +1,32 @@
+\section{Distribution functions}
+
+In this chapter, we will consider probability spaces of the form $(\R, \B, \P)$, where the only variable is the probability function $\P$. It is posible to characterize any probability
+function $\P$ in $\R$ via a real-valued real function:
+
+\begin{definition}
+	A \textbf{distribution function} is a function $F: \R \rightarrow [0, 1]$ such that:
+	\begin{enumerate}
+		\item $F$ increases in $\R$: $F(x_1) \leq F(x_2)$ for all $x_1 < x_2$.
+		\item $F$ is right-continuous: for every $x \in \R$, $F(x) = \lim_{y \rightarrow x, y > x} F(y)$.
+		\item $\lim_{y \rightarrow -\infty} F(x) = 0$ and $\lim_{y \rightarrow \infty} F(x) = 1$.
+	\end{enumerate}
+\end{definition}
+
+Condition 1 guarantees the existence of both one-sided limits:
+\[
+	F(x^+) = \lim_{y \rightarrow x, y > x} F(y) \text{  and  } F(x^-) = \lim_{y \rightarrow x, y < x} F(y)
+\]
+From condition 2, we have that $F(x^+) = F(x)$. However, at some points, we could have that $F(x^-) \neq F(x)$. In this case, $F$ presents a jump discontinuity at $x$.
+
+% TODO examples
+TODO Examples...
+
+Any probability fnuction $\P$ in $(\R, \B)$ determines a distribution function:
+
+\begin{prop}
+	Let $\P$ be a probability function in $(\R, \B)$. Then, the function $F$ defined as follows:
+	\[
+		F(x) = \P((-\infty, x])
+	\]
+	is a distribution function.
+\end{prop}
