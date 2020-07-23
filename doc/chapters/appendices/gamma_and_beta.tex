@@ -65,3 +65,57 @@ and it’s why the gamma function can be seen as an extension of the factorial f
     \centering
 	\includegraphics[width=0.5\textwidth]{appendices/gamma.pdf}
 \end{figure}
+
+\section{The beta function}
+
+\subsection{Definition}
+
+We define the \textit{beta function} as
+
+\[
+    \beta(x, y) = \int_0^1 t^{x - 1}(1 - t)^{y - 1} \, dt
+\]
+
+\subsection{Properties}
+
+\begin{prop}
+The beta function is symmetric:
+\[
+    \beta(x, y) = \beta(y, x)
+\]
+\end{prop}
+\begin{proof}
+    Because of the convergent property of definite integrals,
+    \[
+        \int_0^a f(t) \, dt = \int_0^a f(a - t) \, dt
+    \]  
+    we can rewrite the above integral as
+    \[
+        \beta(x, y) = \int_0^1 (1 - t)^{x - 1} t^{y - 1} \, dt = \int_0^1 t^{y - 1} (1 - t)^{x - 1} \, dt = \beta(y, x)
+    \]
+\end{proof}
+
+\begin{prop}
+    The following relation between the gamma and beta functions holds:
+    \[
+        \beta(x, y) = \frac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}
+    \]
+    Then, for positive integers $x$ and $y$ we can define the beta function as:
+    \[
+        \beta(x, y) = \frac{(x - 1)! (y - 1)!}{(x + y - 1)!}
+    \]
+\end{prop}
+\begin{proof}
+    Using the definition of the gamma function, we can write
+    \[
+        \Gamma(m)\Gamma(n) = \int_0^\infty x^{m - 1} e^{-x} \, dx \int_0^\infty y^{n - 1} e^{-y} \, dy
+    \]
+    Then we can rewrite it as a double integral
+    \[
+        \Gamma(m)\Gamma(n) = \int_0^\infty \int_0^\infty x^{m - 1} y^{n - 1} e^{-(x + y)} \, dx dy
+    \]
+    Applying the substitution $x = vt$ and $y = v(1 - t)$, we have
+    ...
+\end{proof}
+
+https://brilliant.org/wiki/beta-function/
