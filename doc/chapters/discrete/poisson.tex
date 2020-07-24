@@ -13,16 +13,18 @@ The Poisson distribution is an appropriate model if the following assumptions ar
 \end{itemize}
 
 The Poisson distribution can also be developed as a limiting distribution of the binomial, in which $n \rightarrow \infty$ and $p \rightarrow 0$ so that $np$ remains a constant. In other words, for large $n$ and small $p$, the binomial distribution can be approximated by the Poisson distribution with mean $\lambda = np$.
-
 If the sample was drawn without replacement from a small finite population, the hypergeometric distribution should be used instead of the binomial.
 
+If the number of events per unit time follows a Poisson distribution, then the amount of time between events follows the exponential distribution.
+
 \subsection{Probability mass function}
-Let $X$ denote the number of events in a unit interval of time or in a unit distance.Then, $X$ is called the Poisson random variable with mean number of events $\lambda$ in a unit interval of time. The probability mass function of a Poisson distribution with mean $\lambda$ is given by
+Let $X$ denote the number of events in a unit interval of time or in a unit distance. Then, $X$ is called the Poisson random variable with mean number of events $\lambda$ in a unit interval of time. The probability mass function of a Poisson distribution with mean $\lambda$ is given by
 \[
  	f(k \mid \lambda) = P(X = k \mid \lambda) = \frac{e^{-\lambda} \lambda^k}{k!}, \ k = 0, 1, 2, \ldots
 \]
 
-The Poisson probability mass function is right-skewed, and the degree of skewness decreases as $\lambda$ increases.
+The Poisson probability mass function is right-skewed, because it is inhibited by the zero occurrence barrier (there can not happen less than 0 events) on the left and it is unlimited on the other side.
+The degree of skewness decreases as $\lambda$ increases. As $\lambda$ becomes bigger, the graph looks more like a normal distribution.
 
 \begin{figure}[H]
 	\centering
@@ -104,3 +106,36 @@ The Poisson probability mass function is right-skewed, and the degree of skewnes
 	Mean & $\lambda$ \\\hline
 	Variance & $\lambda$\\\hline
 \end{tabularx}
+
+\section{Examples}
+
+\begin{example}[Approximation of the binomial to a Poisson]
+	(Taken from \cite{AerinKim})
+
+	Suppose we have a website. Each person that visits the website has some probability of clicking an ad. The binomial distribution can help us calculate the probability of successful events (clicks).
+	A binomial random variable is the number of successes ($x$) in $n$ repeated trials. We assume the probability of success $p$ is constant over each trial.
+
+	We are interested in knowing the number of people that will click an ad per week. Let's assume we have the stats for a year: a total of 59000 poeple visited the website, and out of them, 888 people clicked an ad.
+	Then, $n = 59000/12 = 1134$. The number of people who clicked an ad per week is $888/52 = 17$. The probability of success is $p = 888/59000 = 0.015$.
+
+	At this point we can calculate, for example, the probability that next week exactly 20 people click an add. We use the binomial pmf for that:
+	\[
+		P(X = 20) = \binom{n}{x} p^x (1 - p)^{n - x} = \binom{1134}{20} \ 0.015^20 \ (1 - 0.015)^{1134 - 20} = 0.06962
+	\]
+
+	Other values are as follows:
+
+	\begin{tabular}{c | c}
+		x & Binomial $P(X = x)$ \\\hline
+		10 & 0.02250 \\\hline
+		17 & 0.09701 \\\hline
+		20 & 0.06962 \\\hline
+		30 & 0.00121 \\\hline
+		40 & $< 0.000001$ \\
+	\end{tabular}
+
+	Note that the \textbf{expected value} or \textbf{mean}, 17 (which is the average number of successes per week we calculated from the raw data), has the highest probability of happening.
+\end{example}
+
+% TODO: http://www.sascha-frank.com/Faq/tables_four.html
+% TODO: https://www.overleaf.com/learn/latex/Environments
